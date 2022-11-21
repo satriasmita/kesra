@@ -26,7 +26,7 @@ $root_folder = Yii::getAlias('@root');
 
 
 
-$this->title =  'DASHBOARD WEBSITE DPRD KOTA PARIAMAN';
+$this->title =  'DASHBOARD WEBSITE KESRA KOTA PARIAMAN';
 ?>
 
 <h1>Selamat Datang</h1>

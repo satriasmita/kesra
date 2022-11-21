@@ -31,55 +31,11 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Beranda', 'icon' => 'home', 'url' => ['/site/index']],
-                    // [
-                    //     'label' => 'Pengaturan Tampilan',
-                    //     'icon' => 'bars',
-                    //     'url' => '#',
-                    //     "items" => [
-                    //         ['label' => 'Halaman Statis', 'icon' => 'bars', 'url' => ['/statis-page']],
-                    //         ['label' => 'Kategori Posting', 'icon' => 'tv', 'url' => ['/posting-kategori']],
-                    //         ['label' => 'Kategori Tampilan', 'icon' => 'clipboard', 'url' => ['/kategori']],
-                    //     ],
-                    // ],
-                    ['label' => 'Agenda Kegiatan', 'icon' => 'bank', 'url' => ['/agenda']],
-                    // ['label' => 'Berita', 'icon' => 'folder-open', 'url' => ['/berita']],
-                    // ['label' => 'Galeri', 'icon' => 'users', 'url' => ['/galeri']],
-                    
-                    ['label' => 'Posting', 'icon' => 'users', 'url' => ['/posting']],
-
-                    [
-                        'label' => 'Manajemen Anggota',
-                        'icon' => 'bars',
-                        'url' => '#',
-                        "items" => [
-                            ['label' => 'Badan', 'icon' => 'shopping-cart', 'url' => ['/badan']],
-                            ['label' => 'Komisi', 'icon' => 'bank', 'url' => ['/komisi']],
-                            ['label' => 'Fraksi', 'icon' => 'bank', 'url' => ['/fraksi']],
-                            ['label' => 'Pimpinan Dewan', 'icon' => 'bank', 'url' => ['/pimpinan-dewan']],
-
-                        ],
-                    ],
-                    
+                    ['label' => 'Posting', 'icon' => 'users', 'url' => ['/posting']],       
                     ['label' => 'Pengaturan Slider', 'icon' => 'desktop', 'url' => ['/slider']],
-                    [
-                        'label' => 'Manajemen Kategori',
-                        'icon' => 'bars',
-                        'url' => '#',
-                        "items" => [
-                                ['label' => 'Kategori Badan', 'icon' => 'cloud-upload', 'url' => ['/kategori-badan']],
-                                ['label' => 'Kategori Fraksi', 'icon' => 'cloud-upload', 'url' => ['/kategori-fraksi']],
-                                ['label' => 'Kategori Komisi', 'icon' => 'cloud-upload', 'url' => ['/kategori-komisi']],
-                                ['label' => 'Kategori Berita', 'icon' => 'cloud-upload', 'url' => ['/kategori-berita']],
-
-                        ],
-                    ],
                     ['label' => 'Manajemen User', 'icon' => 'users', 'url' => ['/user/admin']],
                     ['label' => 'Profil User', 'icon' => 'user', 'url' => ['/user/profile']],
                     ['label' => 'Info Akun', 'icon' => 'lock', 'url' => ['/user/account']],
-
-
-
-
                     [
                         'label' => 'Pengaturan Tampilan',
                         'icon' => 'bars',
@@ -88,7 +44,6 @@
                             ['label' => 'Kategori Posting', 'icon' => 'tv', 'url' => ['/posting-kategori']],
                         ],
                     ],
-
                     ['label' => 'Manajemen Galeri', 'icon' => 'folder-open-o', 'url' => ['/posting']],
                     ['label' => 'Data Instansi', 'icon' => 'bank', 'url' => ['/data-instansi']],
 

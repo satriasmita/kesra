@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'webdprd',
-	'name' => ' WEB DPRD KOTA PARIAMAN',
+	'name' => ' KESRA',
     'basePath' => dirname(__DIR__),
     'timeZone'=>'Asia/Jakarta',
     'language'=>'id_ID',

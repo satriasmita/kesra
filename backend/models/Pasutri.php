@@ -67,4 +67,31 @@ class Pasutri extends \yii\db\ActiveRecord
             'pasutri_alamatnikah' => 'Alamat setelah menikah',
         ];
     }
+
+    public function tanggalIndo($tanggal, $cetak_hari = true)
+    {
+        $array_hari = array(1=>'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu');
+        $hari = $array_hari[date('N',strtotime($tanggal))];
+
+        //FORMAT TANGGAL
+        $tgl = date ('j', strtotime($tanggal));
+
+        //ARRAY BULAN
+        $array_bulan = array(1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+        $bulan = $array_bulan[date('n', strtotime($tanggal))];
+
+        //FORMAT TAHUN
+        $tahun = date('Y', strtotime($tanggal));
+
+        $jam = date('H:i:s', strtotime($tanggal));
+
+        //MENAMPILKAN HARI DAN TANGGAL
+        $tgl_indo =$hari . ', ' . $tgl . ' '. $bulan . ' '. $tahun;
+
+        if ($tanggal) {
+            return $tgl_indo;
+        } else{
+            return 'Tidak Diset';
+        }
+    }
 }

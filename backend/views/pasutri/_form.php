@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pasutri */
@@ -40,26 +41,50 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'pasutri_ttlsuami')->textInput(['maxlength' => true]) ?>
     </div>
     <div class="col-md-6">
-    <?= $form->field($model, 'pasutri_pendidikansuami')->textInput(['maxlength' => true]) ?>
-    </div>
-    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamatsuami')->textarea(['rows' => 6]) ?>
     </div> 
+    <div class="col-md-6">
+    <?= $form->field($model, 'pasutri_pendidikansuami')->textInput(['maxlength' => true]) ?>
+    </div>
     <div class="col-md-12">
     <h5 align="left" style="text-decoration: underline; font-weight: bold; " >DATA PERNIKAHAN </h5>
     </div>
     <div class="col-md-6">
-    <?= $form->field($model, 'pasutri_tglnikah')->textInput() ?>
-    </div>
-    <div class="col-md-6">
-    <?= $form->field($model, 'pasutri_pesta')->textInput() ?>
-    </div>
-    <div class="col-md-6">
-    <?= $form->field($model, 'pasutri_tglpenasehat')->textInput() ?>
-    </div>
+            <?= $form->field($model, 'pasutri_tglnikah')->widget(DatePicker::className(),[
+            'language' => 'id',
+            'type' => DatePicker::TYPE_COMPONENT_PREPEND,
+            'pluginOptions' => [
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd',
+                'todayHighlight' => true
+            ]
+        ]) ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'pasutri_pesta')->widget(DatePicker::className(),[
+            'language' => 'id',
+            'type' => DatePicker::TYPE_COMPONENT_PREPEND,
+            'pluginOptions' => [
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd',
+                'todayHighlight' => true
+            ]
+        ]) ?>
+        </div>
     <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamatnikah')->textarea(['rows' => 6]) ?>
     </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'pasutri_tglpenasehat')->widget(DatePicker::className(),[
+            'language' => 'id',
+            'type' => DatePicker::TYPE_COMPONENT_PREPEND,
+            'pluginOptions' => [
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd',
+                'todayHighlight' => true
+            ]
+        ]) ?>
+        </div>
     <div class="col-md-12">
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

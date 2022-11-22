@@ -83,7 +83,7 @@
                         'icon' => 'home',
                         'url' => ['/'],
                     ],
-                    ['label' => 'Data Pasutri', 'icon' => 'desktop', 'url' => ['/pasutri']],
+                    ['label' => 'Data Pasutri', 'icon' => 'user-plus', 'url' => ['/pasutri']],
                     [
                         'label' => 'User',
                         'icon' => 'bars',

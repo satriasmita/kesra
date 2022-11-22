@@ -11,37 +11,60 @@ use yii\widgets\ActiveForm;
 <div class="pasutri-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
+    <div class="row">    
+    <div class="col-md-12">
+    <h5 align="left" style="text-decoration: underline; font-weight: bold; " >DATA ISTRI </h5>
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_nama')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_ttl')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_pendidikan')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_pekerjaan')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamat')->textarea(['rows' => 6]) ?>
-
+    </div> 
+    <div class="col-md-12">
+    <h5 align="left" style="text-decoration: underline; font-weight: bold; " >DATA SUAMI </h5>
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_suami')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_ttlsuami')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_pendidikansuami')->textInput(['maxlength' => true]) ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamatsuami')->textarea(['rows' => 6]) ?>
-
+    </div> 
+    <div class="col-md-12">
+    <h5 align="left" style="text-decoration: underline; font-weight: bold; " >DATA PERNIKAHAN </h5>
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_tglnikah')->textInput() ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_pesta')->textInput() ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_tglpenasehat')->textInput() ?>
-
+    </div>
+    <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamatnikah')->textarea(['rows' => 6]) ?>
-
+    </div>
+    <div class="col-md-12">
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
-
+    </div>
     <?php ActiveForm::end(); ?>
 
 </div>

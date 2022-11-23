@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'DPRD KOTA PARIAMAN';
+$this->title = 'KESRA KOTA PARIAMAN';
 ?>
 
 
@@ -35,10 +35,10 @@ $this->title = 'DPRD KOTA PARIAMAN';
     <?php // echo $this->render('_pelayananopd.php') ?>
 
     <!-- Section: Team -->
-    <?= $this->render('_beritaterbaru.php') ?>
+    <!-- ?= $this->render('_beritaterbaru.php') ?> -->
 
     <!--Gallery Style One-->
-    <?= $this->render('_galeri.php') ?>
+    <!-- ?= $this->render('_galeri.php') ?> -->
 
     <!--Blog Section-->
     <?= $this->render('_pengumumanterbaru.php') ?>

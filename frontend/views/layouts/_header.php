@@ -57,11 +57,8 @@ $imgPath = Yii::getAlias('@root').'/images';
 
               <ul class="navigation clearfix">
               <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/site/']) ?>">Beranda</a></li>
-              <!-- <li ><a style="font-weight: 550; font-size: 16px;" href="?= Url::to(['//']) ?>">Sejarah</a></li> -->
-              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/fraksi/']) ?>">Fraksi</a></li>
-              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/berita/']) ?>">Berita</a></li>
-              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/komisi/']) ?>">Komisi</a></li>
-              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/badan/']) ?>">Badan</a></li>
+              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/fraksi/']) ?>">E-TAHFIDZ</a></li>
+              <li ><a style="font-weight: 550; font-size: 16px;" href="<?= Url::to(['/berita/']) ?>">SIPANAH</a></li>
 
 
 

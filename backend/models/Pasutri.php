@@ -1,6 +1,8 @@
 <?php
 
 namespace backend\models;
+use yii\web\UploadedFile;
+use yii\imagine\Image;
 
 use Yii;
 
@@ -24,6 +26,7 @@ use Yii;
  */
 class Pasutri extends \yii\db\ActiveRecord
 {
+    public $image;
     /**
      * {@inheritdoc}
      */
@@ -38,10 +41,13 @@ class Pasutri extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pasutri_alamat', 'pasutri_alamatsuami', 'pasutri_alamatnikah'], 'string'],
-            [['pasutri_tglnikah', 'pasutri_pesta', 'pasutri_tglpenasehat'], 'safe'],
+            [['pasutri_alamat', 'pasutri_alamatsuami', 'pasutri_alamatnikah','pasutri_istri_nik','pasutri_suami_nik','pasutri_istri_nomorhp','pasutri_suami_nomor_hp','pasutri_istri_statuskawin','pasutri_suami_statuskawin','pasutri_istri_bacaalquran','pasutri_suami_bacaalquran'], 'string'],
+            [['pasutri_tglnikah', 'pasutri_pesta'], 'safe'],
             [['pasutri_nama', 'pasutri_pendidikan', 'pasutri_suami', 'pasutri_pendidikansuami'], 'string', 'max' => 50],
-            [['pasutri_ttl', 'pasutri_pekerjaan', 'pasutri_ttlsuami'], 'string', 'max' => 100],
+            [['pasutri_ttl', 'pasutri_pekerjaan', 'pasutri_ttlsuami','pasutri_suami_pekerjaan'], 'string', 'max' => 100],
+            [['pasutri_fotoistri', 'pasutri_fotosuami'], 'string', 'max' => 255],
+            [['pasutri_istri_usia','pasutri_suami_usia'], 'integer'],
+
         ];
     }
 
@@ -52,21 +58,34 @@ class Pasutri extends \yii\db\ActiveRecord
     {
         return [
             'pasutri_id' => 'ID',
-            'pasutri_nama' => 'Nama',
-            'pasutri_ttl' => 'Tempat / Tanggal Lahir',
-            'pasutri_pendidikan' => 'Pendidikan',
-            'pasutri_pekerjaan' => 'Pekerjaan',
-            'pasutri_alamat' => 'Alamat',
-            'pasutri_suami' => 'Nama Suami',
-            'pasutri_ttlsuami' => 'Tempat / Tanggal Lahir',
-            'pasutri_pendidikansuami' => 'Pendidikan',
-            'pasutri_alamatsuami' => 'Alamat',
+            'pasutri_nama' => 'Nama Calon Istri',
+            'pasutri_ttl' => 'Tempat / Tanggal Lahir Calon Istri',
+            'pasutri_pendidikan' => 'Pendidikan Calon Istri',
+            'pasutri_pekerjaan' => 'Pekerjaan Calon Istri',
+            'pasutri_alamat' => 'Alamat Calon Istri',
+            'pasutri_suami' => 'Nama Calon Suami',
+            'pasutri_ttlsuami' => 'Tempat / Tanggal Lahir Calon Suami',
+            'pasutri_pendidikansuami' => 'Pendidikan Calon Suami',
+            'pasutri_alamatsuami' => 'Alamat Calon Suami',
             'pasutri_tglnikah' => 'Tanggal Pernikahan',
             'pasutri_pesta' => 'Tanggal Pesta',
-            'pasutri_tglpenasehat' => 'Tanggal Penasehat',
+            'pasutri_fotosuami' => 'Foto Suami',
             'pasutri_alamatnikah' => 'Alamat setelah menikah',
+            'pasutri_istri_nik' => 'NIK KTP Calon Istri',
+            'pasutri_suami_nik' => 'NIK KTP Calon Suami',
+            'pasutri_istri_usia' => 'Usia saat ini Calon Istri',
+            'pasutri_suami_usia' => 'Usia saat ini Calon Suami',
+            'pasutri_istri_nomorhp' => 'No WA Aktif Calon Istri',
+            'pasutri_suami_nomor_hp' => 'No WA Aktif Calon Suami',
+            'pasutri_istri_statuskawin' => 'Status Perkawinan Calon Istri',
+            'pasutri_suami_statuskawin' => 'Status Perkawinan Calon Suami',
+            'pasutri_istri_bacaalquran' => 'Membaca Al-Quran Calon Istri',
+            'pasutri_suami_bacaalquran' => 'Membaca Al-Quran Calon Suami',
+            'pasutri_fotoistri' => 'Foto Istri',
+            'pasutri_suami_pekerjaan' => 'Pekerjaan Calon Suami',
         ];
     }
+
 
     public function tanggalIndo($tanggal, $cetak_hari = true)
     {

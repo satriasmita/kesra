@@ -17,8 +17,8 @@ class PasutriSearch extends Pasutri
     public function rules()
     {
         return [
-            [['pasutri_id'], 'integer'],
-            [['pasutri_nama', 'pasutri_ttl', 'pasutri_pendidikan', 'pasutri_pekerjaan', 'pasutri_alamat', 'pasutri_suami', 'pasutri_ttlsuami', 'pasutri_pendidikansuami', 'pasutri_alamatsuami', 'pasutri_tglnikah', 'pasutri_pesta', 'pasutri_tglpenasehat', 'pasutri_alamatnikah'], 'safe'],
+            [['pasutri_id','pasutri_istri_usia','pasutri_suami_usia'], 'integer'],
+            [['pasutri_nama', 'pasutri_ttl', 'pasutri_pendidikan', 'pasutri_pekerjaan', 'pasutri_alamat', 'pasutri_suami', 'pasutri_ttlsuami', 'pasutri_pendidikansuami', 'pasutri_alamatsuami', 'pasutri_tglnikah', 'pasutri_pesta', 'pasutri_tglpenasehat', 'pasutri_alamatnikah','pasutri_istri_nik','pasutri_suami_nik','pasutri_istri_nomorhp','pasutri_suami_nomor_hp','pasutri_istri_statuskawin','pasutri_suami_statuskawin','pasutri_istri_bacaalquran','pasutri_suami_bacaalquran','pasutri_keckua','pasutri_suami_pekerjaan'], 'safe'],
         ];
     }
 
@@ -61,7 +61,8 @@ class PasutriSearch extends Pasutri
             'pasutri_id' => $this->pasutri_id,
             'pasutri_tglnikah' => $this->pasutri_tglnikah,
             'pasutri_pesta' => $this->pasutri_pesta,
-            'pasutri_tglpenasehat' => $this->pasutri_tglpenasehat,
+            'pasutri_istri_usia' => $this->pasutri_istri_usia,
+            'pasutri_suami_usia' => $this->pasutri_suami_usia,
         ]);
 
         $query->andFilterWhere(['like', 'pasutri_nama', $this->pasutri_nama])
@@ -73,7 +74,18 @@ class PasutriSearch extends Pasutri
             ->andFilterWhere(['like', 'pasutri_ttlsuami', $this->pasutri_ttlsuami])
             ->andFilterWhere(['like', 'pasutri_pendidikansuami', $this->pasutri_pendidikansuami])
             ->andFilterWhere(['like', 'pasutri_alamatsuami', $this->pasutri_alamatsuami])
-            ->andFilterWhere(['like', 'pasutri_alamatnikah', $this->pasutri_alamatnikah]);
+            ->andFilterWhere(['like', 'pasutri_istri_nik', $this->pasutri_istri_nik])
+            ->andFilterWhere(['like', 'pasutri_suami_nik', $this->pasutri_suami_nik])
+            ->andFilterWhere(['like', 'pasutri_istri_nomorhp', $this->pasutri_istri_nomorhp])
+            ->andFilterWhere(['like', 'pasutri_suami_nomor_hp', $this->pasutri_suami_nomor_hp])
+            ->andFilterWhere(['like', 'pasutri_istri_statuskawin', $this->pasutri_istri_statuskawin])
+            ->andFilterWhere(['like', 'pasutri_suami_statuskawin', $this->pasutri_suami_statuskawin])
+            ->andFilterWhere(['like', 'pasutri_istri_bacaalquran', $this->pasutri_istri_bacaalquran])
+            ->andFilterWhere(['like', 'pasutri_suami_bacaalquran', $this->pasutri_suami_bacaalquran])
+            ->andFilterWhere(['like', 'pasutri_fotoistri', $this->pasutri_fotoistri])
+            ->andFilterWhere(['like', 'pasutri_fotosuami', $this->pasutri_fotosuami])
+            ->andFilterWhere(['like', 'pasutri_suami_pekerjaan', $this->pasutri_suami_pekerjaan]);
+
 
         return $dataProvider;
     }

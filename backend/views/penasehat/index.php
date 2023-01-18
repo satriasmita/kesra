@@ -4,19 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\PasutriSearch */
+/* @var $searchModel backend\models\PenasehatSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Data Pasangan Calon Suami Istri';
+$this->title = 'Penasehat';
 $this->params['breadcrumbs'][] = $this->title;
 $tombol = '{view} {update} {delete}';
 ?>
-<div class="pasutri-index">
+<div class="penasehat-index">
 <div class="box box-solid box-info">
         <div class="box-header">
             <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
             <div class="box-tools pull-right">
-                <?= Html::a('<i class="fa fa-fw fa-plus-square"></i><b>Tambah ' .'</b>', ['create'], ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
         <div class="box-body">
@@ -25,21 +24,25 @@ $tombol = '{view} {update} {delete}';
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            // 'pasutri_id',
-            'pasutri_nama',
-            'pasutri_ttl',
-            'pasutri_pendidikan',
-            'pasutri_pekerjaan',
-            //'pasutri_alamat:ntext',
-            //'pasutri_suami',
-            //'pasutri_ttlsuami',
-            //'pasutri_pendidikansuami',
-            //'pasutri_alamatsuami:ntext',
-            //'pasutri_tglnikah',
-            //'pasutri_pesta',
-            //'pasutri_tglpenasehat',
-            //'pasutri_alamatnikah:ntext',
+            [
+                'attribute' => 'pasutri.pasutri_suami',
+                'label' => 'Nama Suami',
+            ],
+            'penasehat_nama',
+            [
+                'attribute'=>'penasehat_tanggaldimulai',
+                'format' => 'html',
+                'value' => function ($data){
+                    return $data->tanggalIndo($data->penasehat_tanggaldimulai) ;
+                },
+            ],
+            [
+                'attribute' => 'kecamatan.nama_kec',
+                'label' => 'Kecamatan KUA',
+            ],
+            //'penasehat_keterangan:ntext',
+            //'penasehat_predikat',
+            //'penasehat_tanggalselesai',
 
             // ['class' => 'yii\grid\ActionColumn'],
             [
@@ -88,4 +91,6 @@ $tombol = '{view} {update} {delete}';
             ],
         ],
     ]); ?>
+
+
 </div>

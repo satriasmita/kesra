@@ -8,6 +8,7 @@ use backend\models\PasutriSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PasutriController implements the CRUD actions for Pasutri model.
@@ -62,19 +63,59 @@ class PasutriController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+    // public function actionCreate()
+    // {
+    //     $model = new Pasutri();
+
+    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    //         return $this->redirect(['view', 'id' => $model->pasutri_id]);
+    //     }
+
+    //     return $this->render('create', [
+    //         'model' => $model,
+    //     ]);
+    // }
+
     public function actionCreate()
     {
         $model = new Pasutri();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $imageFile = UploadedFile::getInstance($model,'pasutri_fotoistri');
+        $imageFile2 = UploadedFile::getInstance($model,'pasutri_fotosuami');
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->pasutri_fotoistri = UploadedFile::getInstance($model, 'pasutri_fotoistri');
+            $model->pasutri_fotosuami = UploadedFile::getInstance($model, 'pasutri_fotosuami');
+            if (! $model->pasutri_fotoistri) {
+                $model->save();
+            } else {
+                if(isset($imageFile->size)){
+                $imageFile->saveAs('images/Pasutri/'.$imageFile->baseName.'.'.$imageFile->extension);
+                $imageFile2->saveAs('images/Pasutri/'.$imageFile2->baseName.'.'.$imageFile2->extension);
+            }
+
+            $model->pasutri_fotoistri = $imageFile->baseName.'.'.$imageFile->extension;
+            $model->pasutri_fotosuami = $imageFile2->baseName.'.'.$imageFile2->extension;
+
+            $model->save(false);
+            }
+            Yii::$app->session->setFlash('success', '<strong> Data Berhasil Ditambahkan </strong>');
             return $this->redirect(['view', 'id' => $model->pasutri_id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
+        // if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        //     // return $this->redirect(['index']);
+        //     return $this->redirect(['view', 'id' => $model->wargaid]);
+        // }
 
+        // return $this->render('create', [
+        //     'model' => $model,
+        // ]);
+    }
     /**
      * Updates an existing Pasutri model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -124,4 +165,44 @@ class PasutriController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionFormPasutri()
+    {
+        $searchModel = new PasutriSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('form-pasutri', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionCetakForm($id)
+    {
+        return $this->render('cetak-form', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    public function actionCetak($id)
+    {
+
+        $model = new Pasutri();
+
+        if ($model->load($this->request->post())) {
+
+            $model->pasutri_id = $model->pasutri_id;
+
+            $model->save(false);
+            Yii::$app->session->setFlash('success', '<strong> Data Berhasil Ditambahkan </strong>');
+            return $this->redirect(['index', 'id' => $model->pasutri_id]);
+        } else {
+            return $this->render('cetak', [
+                'model' => $model,
+
+
+            ]);
+        }
+    }
+
 }

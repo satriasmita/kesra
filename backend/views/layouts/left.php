@@ -84,6 +84,16 @@
                         'url' => ['/'],
                     ],
                     ['label' => 'Data Pasutri', 'icon' => 'user-plus', 'url' => ['/pasutri']],
+                    ['label' => 'Data Penasehat', 'icon' => 'user-plus', 'url' => ['/penasehat']],
+                    [
+                        'label' => 'Report',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Cetak Form Pasutri', 'icon' => 'users', 'url' => ['/pasutri/form-pasutri']],
+                            ['label' => 'Cetak Sertifikat', 'icon' => 'user', 'url' => ['/user/profile']],
+                        ],
+                    ],
                     [
                         'label' => 'User',
                         'icon' => 'bars',

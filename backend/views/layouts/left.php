@@ -91,7 +91,7 @@
                         'url' => '#',
                         "items" => [
                             ['label' => 'Cetak Form Pasutri', 'icon' => 'users', 'url' => ['/pasutri/form-pasutri']],
-                            ['label' => 'Cetak Sertifikat', 'icon' => 'user', 'url' => ['/user/profile']],
+                            ['label' => 'Cetak Sertifikat', 'icon' => 'user', 'url' => ['/penasehat/form-sertifikat']],
                         ],
                     ],
                     [

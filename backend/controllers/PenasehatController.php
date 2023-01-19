@@ -122,6 +122,20 @@ class PenasehatController extends Controller
         ]);
     }
 
+    public function actionFormSertifikat()
+    {
+        $searchModel = new PenasehatSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('form-sertifikat', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+   
+
+
     /**
      * Deletes an existing Penasehat model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

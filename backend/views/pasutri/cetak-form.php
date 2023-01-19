@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <tr>
 <td>Nama Lengkap </td>
 <td> <?= $model['pasutri_suami'] ?></td>
-<td rowspan="10" align="center"><?= $model['pasutri_fotosuami'] ?> <img width="210" height="313"></td>
+<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri".$model->pasutri_fotosuami; ?>" class="img-circle" alt="User Image"/></td>
 </tr>
 <tr>
 <td>NIK KTP</td>

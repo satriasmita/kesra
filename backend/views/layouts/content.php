@@ -35,13 +35,13 @@ use dmstr\widgets\Alert;
     </section>
 </div>
 
-<footer class="main-footer">
+<!-- <footer class="main-footer">
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0
     </div>
     <strong>Copyright &copy; 2021 <a href="http://diskominfo.pariamankota.go.id">Diskominfo Kota Pariaman</a>.</strong> All rights
     reserved.
-</footer>
+</footer> -->
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">

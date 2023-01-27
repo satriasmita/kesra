@@ -45,7 +45,8 @@
                     ],
 
                     // ['label' => 'Posting', 'icon' => 'users', 'url' => ['/posting']], 
-                    ['label' => 'Data Siswa', 'icon' => 'desktop', 'url' => ['/siswa']],      
+                    ['label' => 'Data Siswa', 'icon' => 'desktop', 'url' => ['/siswa']],  
+                    ['label' => 'Data Prestasi', 'icon' => 'desktop', 'url' => ['/prestasi']],      
                     ['label' => 'Pengaturan Slider', 'icon' => 'desktop', 'url' => ['/slider']],
                     // [
                     //     'label' => 'Pengaturan Tampilan',

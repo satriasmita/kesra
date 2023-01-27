@@ -9,7 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Penasehat';
 $this->params['breadcrumbs'][] = $this->title;
-$tombol = '{view} {update} {delete}';
+$tombol = '{view}, {edit}';
 ?>
 <div class="penasehat-index">
 <div class="box box-solid box-info">
@@ -52,39 +52,11 @@ $tombol = '{view} {update} {delete}';
                 'template' => $tombol,
                 'buttons' => [
                     'view' => function ($url, $model, $key){
-                        return Html::a('<i class="fa fa-search"></i>', ['view','id'=>$key], [
-                            'aria-label' => 'Lihat Detail Pasutri',
-                            'title'=>'Lihat Detail Pasutri',
+                        return Html::a('<i class="fa fa-male"></i>', ['sertifikat','pe'=>$key, 'pas'=>$key,], [
+                            'aria-label' => 'Sertifikat Suami',
+                            'title'=>'Sertifikat Suami',
                             'style'=>'height:35px;width:40px;margin-bottom:5px;', 
                             'class' => 'btn btn-success', 
-                            ]);
-                    },
-                    'update' => function ($url, $model, $key){
-                        return Html::a('<i class="fa fa-pencil"></i>', ['update','id'=>$key], [
-                            'aria-label' => 'Perbarui Pasutri',
-                            'title'=>'Perbarui Pasutri',
-                            'style'=>'height:35px;width:40px;margin-bottom:5px;', 
-                            'class' => 'btn btn-primary', 
-                            ]);
-                    },
-                    'delete' => function ($url, $model, $key){
-                        return Html::a('<i class="fa fa-trash"></i>', ['delete','id'=>$key], [
-                            'aria-label' => 'Hapus Pasutri',
-                            'title'=>'Hapus Pasutri',
-                            'style'=>'height:35px;width:40px;margin-bottom:5px;', 
-                            'class' => 'btn btn-danger',
-                            'data-confirm'=>'Apakah Anda Ingin Menghapus Data Ini?',
-                            'data-method'=>'post',
-                            ]);
-                    },
-                    'publish' => function ($url, $model, $key){
-                        return Html::a('<i class="fa fa-check-square-o"></i>', ['publish','id'=>$key], [
-                            'aria-label' => 'Publish Pasutri',
-                            'title'=>'Publish Pasutri',
-                            'style'=>'height:35px;width:40px;margin-bottom:5px;', 
-                            'class' => 'btn btn-info',
-                            'data-confirm'=>'Apakah Anda Ingin Publish Pasutri Ini?',
-                            'data-method'=>'post',
                             ]);
                     },
                 ]

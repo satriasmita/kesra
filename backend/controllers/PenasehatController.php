@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\Pasutri;
+use backend\models\PasutriSearch;
 use Yii;
 use backend\models\Penasehat;
 use backend\models\PenasehatSearch;
@@ -132,6 +133,39 @@ class PenasehatController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    // public function actionSertifikat($id)
+    // {
+    //     return $this->render('sertifikat', [
+    //         'model' => $this->findModel($id),
+    //     ]);
+    // }
+
+    public function actionSertifikat($pas,$pe)
+    {
+    
+        
+        $model = Penasehat::find()->where(['penasehat_id' => $pe])->one();
+        $modelPasutri = Pasutri::find()->where(['pasutri_id' => $pas])->one();
+
+        if ($model->load($this->request->post())) {
+
+            $model->penasehat_id = $model->penasehat_id;
+            $model->pasutri_id = $modelPasutri->pasutri_id;
+
+            $model->save(false);
+            Yii::$app->session->setFlash('success', '<strong> Data Berhasil Ditambahkan </strong>');
+            return $this->redirect(['index', 'id' => $model->penasehat_id]);
+        } else {
+            return $this->render('sertifikat', [
+                'model' => $model,
+                'modelPasutri' => $modelPasutri,
+
+
+            ]);
+        }
+    }
+
 
    
 

@@ -66,8 +66,8 @@ $this->params['breadcrumbs'][] = $this->title;
 </tr>
 <tr>
 <td>Nama Lengkap </td>
-<td> <?= $model['pasutri_suami'] ?></td>
-<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri".$model->pasutri_fotosuami; ?>" class="img-circle" alt="User Image"/></td>
+<td > <?= $model['pasutri_suami'] ?></td>
+<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotosuami; ?>" alt="User Image"/></td>
 </tr>
 <tr>
 <td>NIK KTP</td>
@@ -108,6 +108,21 @@ $this->params['breadcrumbs'][] = $this->title;
 </table>
 </body>
 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
 
 <body>
 <h1 align="center"></h1>
@@ -120,7 +135,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <tr>
 <td>Nama Lengkap </td>
 <td> <?= $model['pasutri_nama'] ?></td>
-<td rowspan="10" align="center"><?= $model['pasutri_fotoistri'] ?> <img width="210" height="313"></td>
+<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotoistri; ?>" alt="User Image"/></td>
+
 </tr>
 <tr>
 <td>NIK KTP</td>
@@ -161,8 +177,54 @@ $this->params['breadcrumbs'][] = $this->title;
 </table>
 </body>
 
-</html>
 
+
+</html>
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+<p> 
+  <h5 align="center">&nbsp; </h5>
+<p> 
+
+<table width="100%" style="border:1px solid black;">
+    <tr style="font-size:25px; font-family:times new roman;">
+        <td width="25%" align="center" style="border:1px solid black;  padding:5px; padding-top: 2px; padding-bottom: 1px; ">Calon suami</td>
+        <td width="25%" align="center" style="border:1px solid black; padding:5px; padding-top: 2px; padding-bottom: 1px; ">Calon istri</td>
+    </tr>
+    <tr style="font-size:25px; font-family:times new roman;">
+        <td width="25%" align="center" style="border:1px solid black; padding:5px; padding-top: 100px; padding-bottom: 1px; "></td>
+        <td width="25%" align="center" style="border:1px solid black;  padding:5px; padding-top: 100px; padding-bottom: 1px; "></td>
+    </tr>
+    <tr style="font-size:25px; font-family:times new roman;">
+        <td width="25%" align="center" style="border:1px solid black; padding:5px; padding-top: 2px; padding-bottom: 1px; ">(.................................................) </td>
+        <td width="25%" align="center" style="border:1px solid black;  padding:5px; padding-top: 2px; padding-bottom: 1px; ">(.................................................) </td>
+    </tr>
+</table>
 
 <script type="text/javascript">
     $(document).ready(function(){

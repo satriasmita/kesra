@@ -1,7 +1,10 @@
 <?php
 
+use backend\models\Siswa;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\hafalan */
@@ -12,9 +15,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'hafalan_id')->textInput() ?>
 
-    <?= $form->field($model, 'siswa_id')->textInput() ?>
+    <?= $form->field($model, 'siswa_id')->widget(Select2::classname(),[
+                                    'data' => ArrayHelper::map(Siswa::find()->all(),'siswa_id','siswa_nama'),
+                                    'language' => 'en',
+                                    'options' => ['placeholder' => 'Pilih ..'],
+                                    'pluginOptions' => ['allowClear' => true],
+                                  ]); ?>
 
     <?= $form->field($model, 'hafalan_juz')->textInput(['maxlength' => true]) ?>
 

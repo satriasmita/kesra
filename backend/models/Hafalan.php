@@ -60,4 +60,9 @@ class Hafalan extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Siswa::className(), ['siswa_id' => 'hafalan_id']);
     }
+
+    public function getSiswa()
+    {
+        return $this->hasOne(Siswa::className(), ['siswa_id' => 'siswa_id']);
+    }
 }

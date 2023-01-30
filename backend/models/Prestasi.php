@@ -51,7 +51,7 @@ class Prestasi extends \yii\db\ActiveRecord
     {
         return [
             'prestasi_id' => 'Prestasi ID',
-            'siswa_id' => 'Siswa ID',
+            'siswa_id' => 'Nama Siswa',
             'prestasi_nama' => 'Prestasi Nama',
             'prestasi_tingkat' => 'Prestasi Tingkat',
             'prestasi_dll' => 'Prestasi Dll',

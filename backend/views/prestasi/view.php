@@ -7,30 +7,27 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Prestasi */
 
 $this->title = $model->prestasi_id;
-$this->params['breadcrumbs'][] = ['label' => 'Prestasis', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Prestasi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="prestasi-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->prestasi_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->prestasi_id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
+<div class="box box-solid box-warning">
+        <div class="box-header">
+            <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
+            <div class="box-tools pull-right">
+                <?= Html::a('<i class="fa fa-fw fa-pencil-square"></i>Perbarui', ['update', 'id' => $model->prestasi_id], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('<i class="fa fa-fw fa-trash"></i>Hapus', ['delete', 'id' => $model->prestasi_id], ['class' => 'btn btn-danger','data' => ['confirm' => 'Anda Yakin Ingin Menghapus Data Ini?', 'method' => 'post',],]) ?>
+            </div>
+        </div>
+        <div class="box-body">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'prestasi_id',
-            'siswa_id',
+            [
+                'attribute' => 'siswa.siswa_nama',
+                'label' => 'Nama Siswa',
+            ],
             'prestasi_nama',
             'prestasi_tingkat',
             'prestasi_dll',

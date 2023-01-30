@@ -45,7 +45,7 @@ class Hafalan extends \yii\db\ActiveRecord
     {
         return [
             'hafalan_id' => 'Hafalan ID',
-            'siswa_id' => 'Siswa ID',
+            'siswa_id' => 'Nama Siswa',
             'hafalan_juz' => 'Hafalan Juz',
             'hafalan_detail' => 'Hafalan Detail',
         ];

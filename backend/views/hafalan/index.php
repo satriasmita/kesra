@@ -28,8 +28,10 @@ $tombol = '{view} {update} {delete}';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            // 'hafalan_id',
-            'siswa_id',
+            [
+                'attribute' => 'siswa.siswa_nama',
+                'label' => 'Nama Siswa',
+            ],
             'hafalan_juz',
             'hafalan_detail',
 

@@ -58,16 +58,6 @@
                     //     ],
                     // ],
                     [
-                        'label' => 'Report',
-                        'icon' => 'bars',
-                        'url' => '#',
-                        "items" => [
-                            ['label' => 'Siswa', 'icon' => 'tv', 'url' => ['/siswa/form-siswa']],
-                            ['label' => 'Hafalan', 'icon' => 'tv', 'url' => ['/hafalan/form-hafalan']],
-                            ['label' => 'Prestasi', 'icon' => 'tv', 'url' => ['/prestasi/form-prestasi']],
-                        ],
-                    ],
-                    [
                         'label' => 'User',
                         'icon' => 'bars',
                         'url' => '#',

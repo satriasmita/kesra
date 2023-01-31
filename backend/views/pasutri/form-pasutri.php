@@ -39,8 +39,8 @@ $tombol = '{view}';
                 'buttons' => [
                     'view' => function ($url, $model, $key){
                         return Html::a('<i class="fa fa-search"></i>', ['cetak-form','id'=>$key], [
-                            'aria-label' => 'Lihat Detail Restoran',
-                            'title'=>'Lihat Detail Restoran',
+                            'aria-label' => 'Lihat Detail',
+                            'title'=>'Lihat Detail',
                             'style'=>'height:35px;width:40px;margin-bottom:5px;', 
                             'class' => 'btn btn-success', 
                             ]);

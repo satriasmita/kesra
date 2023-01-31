@@ -30,6 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'prestasi_nama',
             'prestasi_tingkat',
+            [
+                'attribute'=>'prestasi_tingkat',
+                'value'=> $model->prestasi_tingkat == 1 ? 'Kelurahan / Desa' : ($model->prestasi_tingkat == 2 ? 'Kecamatan' : ($model->prestasi_tingkat == 3 ? 'Kota' : ($model->prestasi_tingkat == 4 ? 'Provinsi' : ($model->prestasi_tingkat == 5 ? 'Internasional' : '')))),
+            ],
             'prestasi_dll',
             'prestasi_penyelenggara',
             'prestasi_tempatkeg',

@@ -35,7 +35,7 @@ class Siswa extends \yii\db\ActiveRecord
     {
         return [
             [['kecamatan_id', 'siswa_juz','mda_id'], 'integer'],
-            [['siswa_alamat'], 'string'],
+            [['siswa_alamat','siswa_id'], 'string'],
             [['sekolah_id'], 'string', 'max' => 100],
             [['siswa_nama', 'siswa_namaayah', 'siswa_namaibu'], 'string', 'max' => 50],
             [['siswa_kelas'], 'string', 'max' => 10],
@@ -48,7 +48,7 @@ class Siswa extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'siswa_id' => 'ID',
+            'siswa_id' => 'NIK Siswa',
             'sekolah_id' => 'Nama Sekolah',
             'mda_id' => 'MDA/MDTA',
             'kecamatan_id' => 'Kecamatan',

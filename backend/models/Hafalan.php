@@ -31,8 +31,8 @@ class Hafalan extends \yii\db\ActiveRecord
     {
         return [
             [['siswa_id', 'hafalan_juz', 'hafalan_detail'], 'required'],
-            [['siswa_id'], 'integer'],
             [['hafalan_juz'], 'string', 'max' => 10],
+            [['siswa_id'], 'string', 'max' => 16],
             [['hafalan_detail'], 'string', 'max' => 255],
             [['hafalan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Siswa::className(), 'targetAttribute' => ['hafalan_id' => 'siswa_id']],
         ];

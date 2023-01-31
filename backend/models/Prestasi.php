@@ -35,10 +35,10 @@ class Prestasi extends \yii\db\ActiveRecord
     {
         return [
             [['siswa_id', 'prestasi_nama', 'prestasi_tingkat', 'prestasi_dll', 'prestasi_penyelenggara', 'prestasi_tempatkeg', 'prestasi_ket'], 'required'],
-            [['siswa_id'], 'integer'],
             [['prestasi_ket'], 'string'],
             [['prestasi_nama'], 'string', 'max' => 100],
             [['prestasi_tingkat'], 'string', 'max' => 20],
+            [['siswa_id'], 'string', 'max' => 16],
             [['prestasi_dll', 'prestasi_penyelenggara', 'prestasi_tempatkeg'], 'string', 'max' => 50],
             [['siswa_id'], 'exist', 'skipOnError' => true, 'targetClass' => Siswa::className(), 'targetAttribute' => ['siswa_id' => 'siswa_id']],
         ];

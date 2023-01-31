@@ -19,6 +19,9 @@ use yii\helpers\ArrayHelper;
     <?php $form = ActiveForm::begin(); ?>
     <div class="row">
         <div class="col-md-6">
+            <?= $form->field($model, 'siswa_id')->textInput(['maxlength' => true]) ?>
+            </div>
+        <div class="col-md-6">
             <?= $form->field($model, 'sekolah_id')->widget(Select2::classname(),[
                                     'data' => ArrayHelper::map(MasterSekolah::find()->all(),'sekolah_id','sekolah_nama'),
                                     'language' => 'en',

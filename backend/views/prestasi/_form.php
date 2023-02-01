@@ -35,13 +35,13 @@ use backend\models\Siswa;
     <?= $form->field($model, 'prestasi_dll')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'prestasi_penyelenggara')->textInput(['maxlength' => true]) ?>
-    <!-- ?= $form->field($model, 'prestasi_penyelenggara')->checkboxList([
+    <?= $form->field($model, 'prestasi_penyelenggara')->checkboxList([
                 '1' => 'Kelurahan / Desa',
                 '2' => 'Kecamatan',
                 '3' => 'Kota',
                 '4' => 'Provinsi',
                 '5' => 'Internasional'
-            ]) ?> -->
+            ]) ?>
 
 
     <?= $form->field($model, 'prestasi_tempatkeg')->textInput(['maxlength' => true]) ?>

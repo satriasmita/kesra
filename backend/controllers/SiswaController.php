@@ -197,5 +197,17 @@ class SiswaController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    public function actionCetak()
+    {
+    
+         $searchModel = new SiswaSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('cetak', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     
 }

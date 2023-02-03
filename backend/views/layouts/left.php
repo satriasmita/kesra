@@ -58,6 +58,16 @@
                     //     ],
                     // ],
                     [
+                        'label' => 'Report',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Siswa', 'icon' => 'tv', 'url' => ['/siswa/cetak']],
+                            ['label' => 'Sekolah', 'icon' => 'tv', 'url' => ['/master-sekolah']],
+                            ['label' => 'MDA', 'icon' => 'tv', 'url' => ['/master-mda']],
+                        ],
+                    ],
+                    [
                         'label' => 'User',
                         'icon' => 'bars',
                         'url' => '#',

@@ -67,7 +67,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <tr>
 <td>Nama Lengkap </td>
 <td > <?= $model['pasutri_suami'] ?></td>
-<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotosuami; ?>" alt="User Image"/></td>
+<!-- <td rowspan="10" align="center"> <img src="?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotosuami; ?>" alt="User Image"/></td> -->
+<td rowspan="10" align="center" > <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/" ?>" alt="Photo"/></td>
+
 </tr>
 <tr>
 <td>NIK KTP</td>
@@ -135,7 +137,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <tr>
 <td>Nama Lengkap </td>
 <td> <?= $model['pasutri_nama'] ?></td>
-<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotoistri; ?>" alt="User Image"/></td>
+<!-- <td rowspan="10" align="center"> <img src="?php echo Yii::getAlias('@web')."/images/Pasutri/".$model->pasutri_fotoistri; ?>" alt="User Image"/></td> -->
+<td rowspan="10" align="center"> <img src="<?php echo Yii::getAlias('@web')."/images/Pasutri/" ?>" alt="Photo"/></td>
 
 </tr>
 <tr>

@@ -25,8 +25,9 @@
             </div>
         </form>
         <!-- /.search form -->
-
-    <?php if (Yii::$app->user->identity->role_id == 1) : ?>
+    
+    
+    <?php if (Yii::$app->user->identity->role_id == 3) : ?>
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
@@ -84,7 +85,71 @@
             ]
         ) ?>
 
-    <?php elseif (Yii::$app->user->identity->role_id == 2) : ?>
+    <?php elseif (Yii::$app->user->identity->role_id == 1) : ?>
+        <?= dmstr\widgets\Menu::widget(
+            [
+                'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
+                'items' => [
+                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    [
+                        'label' => 'Beranda',
+                        'icon' => 'home',
+                        'url' => ['/'],
+                    ],
+                    ['label' => 'Data Pasutri', 'icon' => 'user-plus', 'url' => ['/pasutri']],
+                    ['label' => 'Data Penasehat', 'icon' => 'user-plus', 'url' => ['/penasehat']],
+                    [
+                        'label' => 'Report',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Cetak Form Pasutri', 'icon' => 'users', 'url' => ['/pasutri/form-pasutri']],
+                            ['label' => 'Cetak Sertifikat', 'icon' => 'user', 'url' => ['/penasehat/form-sertifikat']],
+                        ],
+                    ],
+                    [
+                        'label' => 'User',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Manajemen User', 'icon' => 'users', 'url' => ['/user/admin']],
+                            ['label' => 'Profil User', 'icon' => 'user', 'url' => ['/user/profile']],
+                            ['label' => 'Info Akun', 'icon' => 'lock', 'url' => ['/user/account']],
+                        ],
+                    ],
+
+                    [
+                        'label' => 'Master',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Juz', 'icon' => 'tv', 'url' => ['/master-juz']],
+                            ['label' => 'Sekolah', 'icon' => 'tv', 'url' => ['/master-sekolah']],
+                            ['label' => 'MDA', 'icon' => 'tv', 'url' => ['/master-mda']],
+                        ],
+                    ],
+
+                    ['label' => 'Data Siswa', 'icon' => 'desktop', 'url' => ['/siswa']],  
+                    ['label' => 'Data Prestasi', 'icon' => 'desktop', 'url' => ['/prestasi']],  
+                    ['label' => 'Data Hafalan', 'icon' => 'desktop', 'url' => ['/hafalan']],      
+                    ['label' => 'Pengaturan Slider', 'icon' => 'desktop', 'url' => ['/slider']],
+                
+                    [
+                        'label' => 'Report',
+                        'icon' => 'bars',
+                        'url' => '#',
+                        "items" => [
+                            ['label' => 'Siswa', 'icon' => 'tv', 'url' => ['/siswa/cetak']],
+                            ['label' => 'Sekolah', 'icon' => 'tv', 'url' => ['/master-sekolah']],
+                            ['label' => 'MDA', 'icon' => 'tv', 'url' => ['/master-mda']],
+                        ],
+                    ],
+              
+                ],
+            ]
+        ) ?>
+
+    <?php elseif (Yii::$app->user->identity->role_id == 4) : ?>
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],

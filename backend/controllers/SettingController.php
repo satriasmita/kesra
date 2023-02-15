@@ -33,7 +33,7 @@ class SettingController extends Controller
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $role = Yii::$app->user->identity->role->name;
-                            return $role=='Super Admin';
+                            return $role=='Etahfidz';
                         }
                     ],
                     [
@@ -42,7 +42,7 @@ class SettingController extends Controller
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $role = Yii::$app->user->identity->role->name;
-                            return $role=='Admin Website';
+                            return $role=='Sipanah';
                         }
                     ],
                 ],

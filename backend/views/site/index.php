@@ -1,34 +1,89 @@
 <?php
 
-/* @var $this yii\web\View */
-use yii\helpers\Url;
-use yii\helpers\Html;
-use backend\models\DataOpd;
-use backend\models\Setting;
-use backend\models\Mstpegawai;
-use backend\models\Pegawainonpns;
-use backend\models\SkpdTbl;
+/** @var yii\web\View $this */
 
+use backend\models\Siswa;
+use backend\models\Pasutri;
+use backend\models\Penasehat;
+use backend\models\Prestasi;
+use backend\models\Hafalan;
 
-$imgPath = Yii::getAlias('@root').'/images';
-$imgPathfront = Yii::getAlias('@root').'/imagesfrontend';
-$root_folder = Yii::getAlias('@root');
-
-// $getprofilopd = DataOpd::find()-> one();
-// $opd_upt = $getprofilopd->nama_opd;
-
-// $skpd = (new Setting)->find()->where(['nama_setting'=>'SKPD'])->one();
-// $KDSKPD = $skpd->nilai_setting;
-// $getSkpd = (new SkpdTbl)->find()->where(['KDSKPD'=>$KDSKPD])->one();
-
-// $nama_web = $getSkpd ? $getSkpd->NMSKPD : 'Nama SKPD Tidak Ada';
-
-
-
-
-$this->title =  'DASHBOARD WEBSITE KESRA KOTA PARIAMAN';
+$this->title = 'DASHBOARD APLIKASI KESRA';
 ?>
+<div class="site-index">
+    <div class="body-content">
+        <div class="row">
+            <?php
+            $total_siswa = Siswa::find()->count();
+            $total_pasutri = Pasutri::find()->count();
+            $total_penasehat = Penasehat::find()->count();
+            $total_prestasi = Prestasi::find()->count();
+            $total_hafalan = Hafalan::find()->count();
+            ?>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3><?= $total_siswa ?></h3>
+                        <p>Total Siswa</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-purple">
+                    <div class="inner">
+                        <h3><?= $total_pasutri ?></h3>
+                        <p>Data Pasutri</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-teal">
+                    <div class="inner">
+                        <h3><?= $total_penasehat ?></h3>
+                        <p>Data Penasehat</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
 
-<h1>Selamat Datang</h1>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-maroon">
+                    <div class="inner">
+                        <h3><?= $total_prestasi ?></h3>
+                        <p>Data Prestasi</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box btn-success">
+                    <div class="inner">
+                        <h3><?= $total_hafalan ?></h3>
+                        <p>Data Hafalan</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            
+        </div>
 
-
+    </div>
+</div>

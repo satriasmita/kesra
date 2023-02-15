@@ -58,6 +58,7 @@ use yii\helpers\Url;
     <div class="col-md-6">
     <?= $form->field($model, 'pasutri_alamat')->textarea(['rows' => 6]) ?>
     </div> 
+    
     <div class="col-md-12">
     <h5 align="left" style="text-decoration: underline; font-weight: bold; " >DATA SUAMI </h5>
     </div>
